@@ -2,7 +2,7 @@ name: Automatically update Docker image versions
 
 on:
   schedule:
-    - cron: "*/57 * * * *"
+    - cron: "3 * * * *"
 
 jobs:
   build:
