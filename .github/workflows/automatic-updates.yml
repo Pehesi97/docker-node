@@ -38,7 +38,7 @@ jobs:
         with:
           script: |
             const { default: script } = await import(`${process.env.GITHUB_WORKSPACE}/check-pr-status.mjs`);
-            await script(github, '${{ github.repository_owner }}', '${{ github.repository }}', ${{ steps.cpr.outputs.pull-request-number }});
+            await script(github, '${{ github.repository }}', ${{ steps.cpr.outputs.pull-request-number }});
 
       - name: Auto-approve the PR
         uses: juliangruber/approve-pull-request-action@v1

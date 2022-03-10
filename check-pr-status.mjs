@@ -7,8 +7,8 @@ import { setTimeout } from 'timers/promises';
 const tries = 10;
 const retryDelay = 30000;
 
-export default async function(github, owner, repository, pull_number) {
-  const repo = repository.replace(new RegExp(`${owner}/`), '')
+export default async function(github, repository, pull_number) {
+  const [owner, repo] = repository.split('/');
   await setTimeout(retryDelay);
 
   for (let t = 0; t < tries; t++) {
